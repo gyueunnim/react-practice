@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.main-bg {
+  height: 900px;
+  background-image: url("https://cdn.eyesmag.com/content/uploads/sliderImages/2019/12/04/dior-jordan-brand-air-jordan-1-high-og-01-ba996dc2-148f-4277-bfd8-12d1b1a75168.jpg");
+  background-position: center;
+  background-size: cover;
+  
+}
+
+.main-title {
+  padding-top: 180px;
+  text-align: center;
+  font-size: 200px;
+}
+
+.main-btn {
+  font-size: 100px;
+}
+
+.start {
+  opacity : 0
+}
+
+.end {
+  opacity : 1;
+  transition : opacity 0.5s;
+}
