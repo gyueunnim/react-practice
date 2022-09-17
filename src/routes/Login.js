@@ -33,6 +33,9 @@ function Login() {
       {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group> */}
+      <Form.Text className="text-muted">
+          Not registered? Create a New Account!
+      </Form.Text><br/><br/>
       <Button style={{marginRight: "10px"}} variant="outline-dark" type="submit" onClick={()  => {
         axios
       }}>

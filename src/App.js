@@ -10,7 +10,8 @@ import Detail from './routes/Detail.js';
 import Cart from './routes/Cart.js';
 import data from "./db/data.js";
 import Login from "./routes/Login.js";
-
+import Brand from "./routes/Brand.js";
+import Style from "./routes/Style.js";
 
 function App() {
 
@@ -58,13 +59,13 @@ function App() {
 
         <Route path="/login" element={ <Login /> }/>
 
-        <Route path="/style" element={ <h3>Style 카테고리</h3> }/>
+        <Route path="/style" element={ <Style/> }/>
 
         <Route path="/shoes" element={ <Shoes shoes={shoes} setShoes={setShoes}/> }/>
 
         <Route path="/shoes/:id" element={ <Detail shoes={shoes}/> }/>
 
-        <Route path="/brand" element={ <h3>Brand 카테고리</h3> }/>
+        <Route path="/brand" element={ <Brand/> }/>
 
         <Route path="/upcomming" element={ <h3>Upcomming 카테고리</h3> }/>
 
@@ -81,7 +82,6 @@ function App() {
         </Route>
       </Routes>
       
-
     </div>
   );
 }
