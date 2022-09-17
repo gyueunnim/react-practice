@@ -1,46 +1,14 @@
 /* eslint-disable */
+import { configureStore, createSlice } from '@reduxjs/toolkit'
+import user from './userSlice.js';
+import cart from './cartSlice.js';
 
-import { configureStore, createSlice } from '@reduxjs/toolkit';
-
-let data = createSlice({
-	name: 'data',
-	initialState: [
-		{
-			id : 0,
-			title : "Jordan 1 Retro High",
-			series : "BloodLine",
-			content : "마이클 조던의 혈관을 표현한 조던 1 시리즈",
-			price : 219000
-		},
-
-		{
-			id : 1,
-			title : "Jordan 1 Retro High",
-			series : "University Blue",
-			content : "미국 대학 농구를 대표하는 한 학교의 상징 색을 표현한 조던 1 시리즈",
-			price : 219000
-		},
-
-		{
-			id : 2,
-			title : "Jordan 1 Retro High",
-			series : "Court Purple",
-			content : "마이클 조던을 대표하는 색상인 시카고에서 보라색으로 바꾼 조던 1 시리즈",
-			price : 219000
-		}
-	]
-})
-
-let cart = createSlice({
-	name: "cart",
-	initialState: [],
-	reducers: {
-
-	}
-})
+export let { changName, increase } = user.actions;
+export let { addCount, addItem } = cart.actions;
 
 export default configureStore({
-	reducer: {
-		data: data.reducer
-	}
+  reducer: {
+    user : user.reducer,
+    cart : cart.reducer
+   }
 }) 

@@ -1,15 +1,18 @@
 /* eslint-disable */
 
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import TabContent from "./TabContent";
+import { addItem } from './../redux/store.js';
 
 function Detail(props) {
 
 	// let a = useSelector((state) => { return state });
 	// console.log(a.data);
+
+	let dispatch = useDispatch();
 
 	let [alertEvent, setAlertEvent] = useState(true);
 	let [tab, setTab] = useState(0);
@@ -49,7 +52,15 @@ function Detail(props) {
 					<p>{findShoe.content}</p>
 					<p>{findShoe.price}원</p>
 					<Button variant="danger" style={{marginRight: "10px"}}>주문하기</Button>
-					<Button variant="outline-danger">장바구니 담기</Button>
+					<Button variant="outline-danger" onClick={()=>{
+						dispatch(addItem(
+							{
+								id: findShoe.id,
+								name: findShoe.title,
+								count: 1
+							}
+						));
+					}}>장바구니 담기</Button>
 				</div>
 			</div> 
 

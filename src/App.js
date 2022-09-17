@@ -7,7 +7,9 @@ import { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate, Outlet } from 'react-router-dom';
 import Shoes from './routes/Shoes.js';
 import Detail from './routes/Detail.js';
+import Cart from './routes/Cart.js';
 import data from "./db/data.js";
+
 
 function App() {
 
@@ -28,8 +30,11 @@ function App() {
     localStorage.setItem('watched', JSON.stringify([]))
   }, []);
 
+
   return (
     <div className={"App start "+fade}>
+    
+
       <Navbar bg="light" variant="light">
         <Container>
           <Navbar.Brand onClick={()=>{ navigate("") }}>FASHIWEB</Navbar.Brand>
@@ -51,7 +56,7 @@ function App() {
 
         <Route path="/style" element={ <h3>Style 카테고리</h3> }/>
 
-        <Route path="/shoes" element={ <Shoes shoes={shoes}/> }/>
+        <Route path="/shoes" element={ <Shoes shoes={shoes} setShoes={setShoes}/> }/>
 
         <Route path="/shoes/:id" element={ <Detail shoes={shoes}/> }/>
 
@@ -59,7 +64,7 @@ function App() {
 
         <Route path="/upcomming" element={ <h3>Upcomming 카테고리</h3> }/>
 
-        <Route path="/cart" element={ <h3>Cart 카테고리</h3> }/>
+        <Route path="/cart" element={ <Cart/> }/>
 
         <Route path="/event" element={ <Event/> }>
           <Route path="one" element={ <p>회원가입 3000P 증정!</p>} />
