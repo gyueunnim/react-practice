@@ -47,6 +47,7 @@
 
 .main-title {
   padding-top: 180px;
+  margin: auto;
   text-align: center;
   font-size: 200px;
 }
@@ -64,6 +65,21 @@
   transition : opacity 0.5s;
 }
 
-.card-cursor {
+.cursor {
   cursor: pointer;
+}
+
+.login-width {
+  width:50%;
+  margin: auto;
+}
+
+.login-title {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 130px;
+}
+
+.login-subtitle {
+  text-align: left;
 }

@@ -9,6 +9,7 @@ import Shoes from './routes/Shoes.js';
 import Detail from './routes/Detail.js';
 import Cart from './routes/Cart.js';
 import data from "./db/data.js";
+import Login from "./routes/Login.js";
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
 
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand onClick={()=>{ navigate("") }}>FASHIWEB</Navbar.Brand>
+          <Navbar.Brand className="cursor" onClick={()=>{ navigate("") }}>FASHIWEB</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={()=>{ navigate("/style") }}>Style</Nav.Link>
             <Nav.Link onClick={()=>{ navigate("/shoes") }}>Shoes</Nav.Link>
@@ -47,12 +48,15 @@ function App() {
             <Nav.Link onClick={()=>{ navigate("/event") }}>Event</Nav.Link>
             <Nav.Link onClick={()=>{ navigate("/about") }}>About</Nav.Link>
           </Nav>
+          <Nav className='ms-auto'><Button variant="outline-secondary" onClick={() => { navigate("/login") }}>Login</Button></Nav>
         </Container>
       </Navbar>
 
     
       <Routes>
         <Route path="/" element={ <Main /> }/>
+
+        <Route path="/login" element={ <Login /> }/>
 
         <Route path="/style" element={ <h3>Style 카테고리</h3> }/>
 
@@ -83,10 +87,11 @@ function App() {
 }
 
 function Main() {
+  let navigate = useNavigate();
   return (
     <div className="main-bg">
       <h1 className="main-title">FASHIWEB</h1>
-      <Button className="main-btn" variant="outline-light">LOGIN</Button>
+      <Button className="main-btn" variant="outline-light" onClick={() => { navigate('/login') }}>LOGIN</Button>
     </div>
   )
 }

@@ -50,7 +50,7 @@ function Card(props) {
 
 	return (
 		<Col onClick={()=>{navigate("/shoes/"+props.i)}}>
-			<div className="card-cursor"> 
+			<div className="cursor"> 
 			<img src={"https://codingapple1.github.io/shop/shoes"+(props.i+1)+".jpg"} width="80%"/>
 			<h3>{props.shoes[props.i].title}</h3>
 			<h4>{props.shoes[props.i].series}</h4>
