@@ -21,9 +21,9 @@ function Login() {
       <Form.Group className="mb-3 login-subtitle" controlId="formBasicEmail">
         <Form.Label>ID</Form.Label>
         <Form.Control type="email" placeholder="Enter ID" />
-        <Form.Text className="text-muted">
+        {/* <Form.Text className="text-muted">
           We'll never share your email with anyone else.
-        </Form.Text>
+        </Form.Text> */}
       </Form.Group>
 
       <Form.Group className="mb-3 login-subtitle" controlId="formBasicPassword">

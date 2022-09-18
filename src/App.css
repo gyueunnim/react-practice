@@ -46,13 +46,14 @@
 }
 
 .main-title {
-  padding-top: 180px;
+  padding-top: 150px;
   margin: auto;
   text-align: center;
   font-size: 200px;
 }
 
 .main-btn {
+  margin-top: 50px;
   font-size: 100px;
 }
 

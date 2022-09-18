@@ -3,13 +3,21 @@
 import { Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { changName, increase, addCount } from "./../redux/store.js";
+import { useEffect, useState } from 'react';
 
 function Cart() {
   let dispatch = useDispatch();
   let state = useSelector((state) => { return state });
 
+  let [fade, setFade] = useState("");
+
+	useEffect(() => {
+		setTimeout(() => { setFade("end") }, 100)
+		return () => { setFade("") }
+	}, [])
+
   return (
-    <div>
+    <div className={'start '+fade}>
       <div>{state.user.name}의 장바구니</div>
     <Table>
       <thead>
